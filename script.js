@@ -109,7 +109,7 @@ function toggleStyle(elementId) {
   // Intervallo di 5 secondi
   setInterval(function() {
     toggleStyle('mouth');
-  }, 5000);
+  }, 3000);
 
   function isMobileWidth() {
     return window.innerWidth <= 768; // Esempio di soglia di 768 pixel
