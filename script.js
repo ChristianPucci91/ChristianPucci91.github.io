@@ -1,28 +1,41 @@
-document.getElementById("earth").addEventListener("click", function() {
-  // Calcola la posizione dell'elemento con id "id2"
-  var elementPosition = document.getElementById("moon").offsetTop;
-  // Sottrai 100px dalla posizione per il margine superiore
-  var targetPosition = elementPosition - 250;
-  // Esegui lo scorrimento con margine superiore corretto
-  window.scrollTo({ top: targetPosition, behavior: "smooth" });
-});
+var position = 'earth';
+var dialogBox = document.getElementById('dialog-box');
+var ufo = document.getElementById('ufo');
+dialogBox.innerHTML = 'I\'m from Jupiter, help me get home! Click me!';
 
-document.getElementById("moon").addEventListener("click", function() {
-  // Calcola la posizione dell'elemento con id "id2"
-  var elementPosition = document.getElementById("mars").offsetTop;
-  // Sottrai 100px dalla posizione per il margine superiore
-  var targetPosition = elementPosition - 250;
-  // Esegui lo scorrimento con margine superiore corretto
-  window.scrollTo({ top: targetPosition, behavior: "smooth" });
-});
+document.getElementById("ufo").addEventListener("click", function() {
+  if(position === 'earth'){
+    var elementPosition = document.getElementById("moon").offsetTop;
+    position = 'moon';
+    dialogBox.innerHTML = 'Thank you! The next step is Mars, give me another push!';
+    ufo.style.top = '2500px';
+  }else if(position === 'moon'){
+    var elementPosition = document.getElementById("mars").offsetTop;
+    position = 'mars';
+    dialogBox.innerHTML = 'Hurray! I\'m almost there! Heeelp';
+    ufo.style.top = '5000px';
+  }else if (position === 'mars'){
+    var elementPosition = document.getElementById("jupiter").offsetTop;
+    position = 'jupiter';
+    dialogBox.innerHTML = 'Finally home! thanks for helping me! It\'s nice to know <strong><em>you\'re not alone!</em></strong> 😄';
+    ufo.style.top = '7500px';
+  }else{
+    var elementPosition = document.getElementById("earth").offsetTop;
+    ufo.style.top = '50%';
+    position = 'earth';
+    dialogBox.innerHTML = 'I\'m from Jupiter, help me get home! Click me!';
 
-document.getElementById("mars").addEventListener("click", function() {
-  // Calcola la posizione dell'elemento con id "id2"
-  var elementPosition = document.getElementById("jupiter").offsetTop;
+  }
   // Sottrai 100px dalla posizione per il margine superiore
-  var targetPosition = elementPosition - 250;
+  if (isMobileWidth()) {
+    var targetPosition = elementPosition - 700;
+  } else {
+    var targetPosition = elementPosition - 250;
+  }
+  // Sposta l'ufo alla stessa posizione dello scrollTo
   // Esegui lo scorrimento con margine superiore corretto
   window.scrollTo({ top: targetPosition, behavior: "smooth" });
+  
 });
 
 
@@ -63,7 +76,7 @@ const myInterval = setInterval(() => {
     if(!p[randomNumber].classList.contains("on") && temp< 100) {
         p[randomNumber].classList.add("on");
     } else {
-        if(temp < flickerDuration.value) {
+        if(temp < 50) {
             p[randomNumber].classList.remove("on");
             p[randomNumber].classList.remove("white");
         } else {
@@ -75,3 +88,29 @@ const myInterval = setInterval(() => {
         clearInterval(myInterval);
     }
 ;}, 20);
+
+function toggleStyle(elementId) {
+    var element = document.getElementById(elementId);
+    var dialog = document.getElementById('dialog-box');
+    // Controlla se l'elemento ha già lo stile applicato
+    if (element.style.height === '2px') {
+      // Applica lo stile con transizione
+      element.style.height = '10px';
+      dialog.style.opacity = '1';
+    } else {
+      // Rimuovi lo stile con transizione
+      setTimeout(function() {
+        element.style.height = '2px';
+        dialog.style.opacity = '0';
+      }, 100); // Durata della transizione in millisecondi (es. 300ms)
+    }
+  }
+  
+  // Intervallo di 5 secondi
+  setInterval(function() {
+    toggleStyle('mouth');
+  }, 5000);
+
+  function isMobileWidth() {
+    return window.innerWidth <= 768; // Esempio di soglia di 768 pixel
+  }
