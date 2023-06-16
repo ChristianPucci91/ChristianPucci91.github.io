@@ -21,7 +21,11 @@ document.getElementById("ufo").addEventListener("click", function() {
     ufo.style.top = '7500px';
   }else{
     var elementPosition = document.getElementById("earth").offsetTop;
-    ufo.style.top = '50%';
+    if (isMobileWidth()) {
+        ufo.style.top = '60%';
+    } else {
+        ufo.style.top = '50%';
+    }
     position = 'earth';
     dialogBox.innerHTML = 'I\'m from Jupiter, help me get home! Click me!';
 
@@ -109,7 +113,7 @@ function toggleStyle(elementId) {
   // Intervallo di 5 secondi
   setInterval(function() {
     toggleStyle('mouth');
-  }, 3000);
+  }, 2000);
 
   function isMobileWidth() {
     return window.innerWidth <= 768; // Esempio di soglia di 768 pixel
