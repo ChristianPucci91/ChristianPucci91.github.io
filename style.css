@@ -587,13 +587,13 @@ background-color: #fff;
   font-family: "SpeedyRegular-7BLoE";
   font-size: 18px;
   line-height: 24px;
-  width: 200px;
+  width: 300px;
   background: #fff;
   border-radius: 40px;
   padding: 24px;
   text-align: center;
   color: #000;
-  top: -150px;
+  top: -180px;
   left: 50px;
   opacity: 0;
 }
