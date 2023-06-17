@@ -106,15 +106,93 @@ function toggleStyle(elementId) {
       setTimeout(function() {
         element.style.height = '2px';
         dialog.style.opacity = '0';
-      }, 100); // Durata della transizione in millisecondi (es. 300ms)
+      }, 300); // Durata della transizione in millisecondi (es. 300ms)
     }
   }
   
   // Intervallo di 5 secondi
   setInterval(function() {
     toggleStyle('mouth');
-  }, 2000);
+  }, 3000);
 
   function isMobileWidth() {
     return window.innerWidth <= 768; // Esempio di soglia di 768 pixel
   }
+
+
+  ////CAROOUSEL
+
+  //Get elements
+const btnSlidesEl = document.querySelectorAll(".btn-slide");
+const slidesEl = document.querySelector(".slider-container");
+const btnDotsEL = document.querySelector(".btn-dots");
+
+let curIndex = 0,
+  lastIndex = 0,
+    timeout;
+
+//Button Next/Prev slide click event
+btnSlidesEl.forEach((btnSlides) => {
+  btnSlides.addEventListener("click", function () {
+    const self = this;
+    const activeSlide = slidesEl.querySelector(".active-slide");
+    curIndex = [...slidesEl.children].indexOf(activeSlide);
+    lastIndex = slidesEl.children.length - 1;
+
+    let nextIndex = 0;
+
+    //Check if the trigger is the next button
+    if (self.className.match("btn-slide--next")) {
+      nextIndex = curIndex !== 0 ? curIndex - 1 : lastIndex;
+    }
+    //otherwise check if the trigger is the prev button
+    else if (self.className.match("btn-slide--prev")) {
+      nextIndex = curIndex !== lastIndex ? curIndex + 1 : 0;
+    }
+
+    setNextPrevSlide(curIndex, nextIndex);
+    resetTimeout();
+  });
+});
+
+//Click event for dot button
+btnDotsEL.addEventListener("click", function (e) {
+  if (e.target.classList.value === "btn-dot") {
+      const curDot = btnDotsEL.querySelector(".active-dot");
+
+      curIndex = [...btnDotsEL.children].indexOf(curDot);
+      nextIndex = [...btnDotsEL.children].indexOf(e.target);
+      setNextPrevSlide(curIndex, nextIndex);
+      resetTimeout();
+  }
+});
+
+function setNextPrevSlide(curIndex, nextIndex) {
+  //Remove the class to the current slide
+  slidesEl.children[curIndex].classList.remove("active-slide");
+  //Assigned the class to the next slide
+  slidesEl.children[nextIndex].classList.add("active-slide");
+  
+}
+
+//Auto Slide
+function autoSlide() {
+  const activeSlide = document.querySelector(".active-slide");
+  curIndex = [...slidesEl.children].indexOf(activeSlide);
+  lastIndex = slidesEl.children.length - 1;
+
+  let nextIndex = curIndex === lastIndex ? 0 : curIndex + 1;
+
+  setNextPrevSlide(curIndex, nextIndex);
+
+  timeout = setTimeout(autoSlide, 5000);
+}
+
+//Invoke auto slide
+autoSlide();
+
+function resetTimeout() {
+  clearTimeout(timeout);
+  timeout = setTimeout(autoSlide, 5000);
+}
+
