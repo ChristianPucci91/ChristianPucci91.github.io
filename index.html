@@ -4,7 +4,9 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -35,7 +37,6 @@
         <i></i>
         <i></i>
         <i></i>
-
       </div>
       
       <div id="stars"></div>
@@ -50,15 +51,107 @@
       <div id="earth" class="earth">
       </div>
       <div class="earth-text">
-        <h3>Earth</h3>
-        <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
+        <h3 style="font-weight:bold;"><strong>About me</strong></h3>
+        <h6>Since I was a child, I've always been passionate about <strong>technology</strong> and everything around it.
+          In particularly like the fact that it is a constantly evolving sector and I like to always be updated on the news concerning it.
+          
+          <br>The world of programming fully reflects these characteristics.
+          I love the idea of ​​being able to create something of my own starting from scratch, for me developing is
+          synonymous with <strong>uniqueness, creativity, freedom</strong>.
+          I am a very curious person and this aspect motivates me to take this path, with the awareness that there will always be something new to learn.<br>
+          
+          <strong>Not just coding</strong>: I'm a big fan of astronomy (I don't know if you noticed) .<br>In my free time I love playing sports, traveling as soon as possible, letting off steam with video games and cooking.
+          
+          By helping the alien get home, you'll learn more about me!</h6>
       </div>
 
       <div id="moon" class="moon">
       </div>
       <div class="moon-text">
-        <h3>Moon</h3>
-        <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
+        <h3>Work Experiences</h3>
+        <div class="testimonials">
+          <button class="btn-slide btn-slide--next">
+            <ion-icon class="arrow-icon" name="arrow-back-outline"></ion-icon>
+          </button>
+          <button class="btn-slide btn-slide--prev">
+            <ion-icon
+              class="arrow-icon"
+              name="arrow-forward-outline"
+            ></ion-icon>
+          </button>
+          <ul class="slider-container">
+            <li class="slider active-slide">
+              <figure class="testimonial">
+                <h3>Jr Full Stack Web Developer Trainee</h3><span class="logo"><img src="./images/boolean.png"></span>
+                <blockquote class="testimonial-text">
+                  <ul class="list">
+                    <li>
+                      During a six-month intensive course, I completed full projects replicating applications <br>such as Netlify, Spotify Web, WhatsApp Web, Digital Ocean, and more. <br>
+                      I learned to effectively use technologies such as HTML5, CSS, JavaScript, <br>jQuery, Vue.js, PHP, MySQL, and Laravel.</li>
+                  </ul>
+                </blockquote>
+                <span class="testimonial-customer"><strong>Boolean Careers</strong>
+                  <br>Sep 2020 - Feb 2021 · 6 mesi<br>
+                  Online</span>
+              </figure>
+            </li>
+            <li class="slider slide">
+              <figure class="testimonial">
+                <h3>Check-in Agent</h3><span class="logo"><img src="./images/alitalia.jpg"></span>
+                <blockquote class="testimonial-text">
+                  <ul class="list">
+                    <li>Management and control of passenger documentation</li>
+                    <li>Gate manager for intercontinental flights</li>
+                    <li>Stand-by list desk management</li>
+                    <li>USA Terminal Facilitator: Problem Solver during the check-in process for 30+ North American flights with over 3000 departing passengers</li>
+                  </ul>
+                </blockquote>
+                <span class="testimonial-customer"><strong>Alitalia Società Aerea Italiana S.p.A.</strong>
+                  <br>Mar 2016 - Dec 2019<br>
+                  Fiumicino, Lazio, Italia</span>
+              </figure>
+            </li>
+            <li class="slider slide">
+              <figure class="testimonial">
+                <h3>Process worker</h3><span class="logo"><img src="./images/gayndah.png"></span>
+                <blockquote class="testimonial-text">
+                  <ul class="list">
+                    <li>Arrangement and sorting of products</li>
+                    <li>Creation of containers for product shipment</li>
+                    <li>Cleaning and extraordinary maintenance of machinery and work areas</li>
+                    <li>Time &amp; Stress management</li>
+                  </ul>
+                </blockquote>
+                <span class="testimonial-customer"><strong>Gayndah Packers Pty Ltd</strong>
+                  <br>Jan 2015 - Dec 2015<br>
+                  Gayndah, Queensland, Australia</span>
+              </figure>
+            </li>
+            <li class="slider slide">
+              <figure class="testimonial">
+                <h3>Lounge bar Manager</h3><span class="logo"><img src="./images/noa.jpeg"></span>
+                <blockquote class="testimonial-text">
+                  <ul class="list">
+                    <li>Creazione semestrale di un nuovo menu Cocktails</li>
+                    <li>Gestione e rifornimento magazzino</li>
+                    <li>Coordinazione e gestione dello staff durante eventi e servizi</li>
+                    <li>Gestione delle richieste dei clienti per eventi/feste</li>
+                    <li>Time &amp; Stress management</li>
+                  </ul>
+                </blockquote>
+                <span class="testimonial-customer"><strong>Noa l'arte del gusto</strong>
+                  <br>Aug 2012 - Dec 2014<br>
+                  Rocca di Papa, Lazio, Italia</span>
+              </figure>
+            </li>
+          </ul>
+          <div class="btn-dots flex">
+            <button class="btn-dot active-dot"></button>
+            <button class="btn-dot"></button>
+            <button class="btn-dot"></button>
+            <button class="btn-dot"></button>
+          </div>
+        </div>
       </div>
 
       <div id="mars" class="mars">
@@ -72,7 +165,7 @@
       </div>
       <div class="jupiter-text">
         <h3>Jupiter</h3>
-        <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h6>
+        
       </div>
 
       <div id="ufo" class="ufo-contain">
@@ -99,6 +192,14 @@
       </div>
       
   </div>
+  <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
 <script src="./script.js"></script>
 </body>
 </html>
