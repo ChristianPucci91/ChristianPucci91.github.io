@@ -86,7 +86,7 @@ body {
   position: absolute;
   right: 10%;
   top: 2500px;
-  max-width: 50%;
+  max-width:fit-content;
   color:#dfd8d8 ;
 }
 
@@ -817,7 +817,7 @@ svg {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
   .container  {
     top: 100px;
     display: none;
@@ -840,9 +840,11 @@ svg {
   .testimonials{
     width: 100% !important;
   }
+
   
   h3,h6{
     padding:20px;
+    margin-top:40px;
   }
 
   .earth{
@@ -855,12 +857,20 @@ svg {
   }
 
   .moon {
-    top: 2900px;
+    top: 2700px;
     opacity: 0.5;
   }
 
   .moon-text{
     top: 2500px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slider-container{
+    height: 100% !important; 
+    width: 100%;
+    margin-top: 50px;
   }
 
   .mars{
@@ -889,6 +899,10 @@ svg {
   .bubble:before{
     left: 180px;
   }
+  .logo {
+    right:50px !important;
+  }
+
 }
 
 @keyframes falling {
@@ -954,7 +968,7 @@ svg {
   list-style: none;
   position: relative;
 
-  background-color: rgba(255, 255, 255, 0.2);
+  /* background-color: rgba(255, 255, 255, 0.2); */
   margin-left: auto;
   margin-right: auto;
   height: 350px; 
@@ -1070,6 +1084,7 @@ figure{
   display: list-item;
   animation-name: fade;
   animation-duration: 1.5s;
+  width: fit-content;
 }
 
 @keyframes fade {
@@ -1105,4 +1120,184 @@ figure{
   cursor: pointer;
   background-color: #e67e22 !important;
   transition: all delay 0.3s ease-in;
+}
+
+
+/* ///MARS SECTION  */
+
+.heading {
+  text-align: center;
+  font-size: 2.0em;
+  letter-spacing: 1px;
+  padding: 40px;
+  color: white;
+}
+
+.gallery-image {
+padding: 20px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.gallery-image img {
+height: 150px;
+width: auto;
+transform: scale(1.0);
+transition: transform 0.4s ease;
+}
+
+.img-box {
+  box-sizing: content-box;
+  margin: 10px;
+  height: 150px;
+  width: auto;
+  overflow: hidden;
+  display: inline-block;
+  color: white;
+  position: relative;
+  background-color: white;
+  max-width: 150px
+}
+
+.caption {
+position: absolute;
+top: 25%;
+left: -10px;
+opacity: 0.0;
+transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transparent-box {
+height: 250px;
+width: 100%;
+background-color:rgba(0, 0, 0, 0);
+position: absolute;
+top: 0;
+left: 0;
+transition: background-color 0.3s ease;
+}
+
+.img-box:hover img { 
+transform: scale(1.1);
+}
+
+.img-box:hover .transparent-box {
+background-color:rgba(0, 0, 0, 0.5);
+}
+
+.img-box:hover .caption {
+transform: translateY(-20px);
+opacity: 1.0;
+}
+
+.img-box:hover {
+cursor: pointer;
+}
+
+.caption > .skill-text:nth-child(2) {
+font-size: 0.8em;
+}
+
+.skill-text{
+  color: black;
+  text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+  font-size:18px;
+}
+
+.opacity-low {
+opacity: 0.5;
+}
+
+.first-div,.second-div,.third-div {
+  display: flex;
+  width: 100%;
+}
+
+.jupiter-text{
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  width: 100%;
+}
+
+.jupiter-text h3 {
+  text-align: right;
+}
+
+.jupiter-logo{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 50px;
+  flex-direction: column;
+}
+
+.jupiter-logo img{
+  width: 40px;
+  margin-right: 20px;
+}
+
+.jupiter-logo a {
+  text-decoration: none;
+  color: white;
+}
+
+.jupiter-logo div{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+  .first-div,.second-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .transparent-box {
+    height: 100%;
+  }
+
+  .img-box{
+    box-sizing: content-box;
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    display: inline-block;
+    color: white;
+    position: relative;
+    background-color: white;
+    max-width: 150px;
+    border-radius: 50%;
+  }
+
+  .gallery-image img {
+    height: 100%;
+    width: 100%;
+  }
+  
+  h3
+  {
+    margin-left: 20px;
+  }
+
+  .btn-slide{
+    display:none;;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  .jupiter-logo{
+    padding:20px;
+  }
+
+  .jupiter-logo a{
+    font-size: 20px;
+  }
 }
