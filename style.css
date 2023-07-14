@@ -1251,7 +1251,7 @@ opacity: 0.5;
 }
 
 @media screen and (max-width: 1024px) {
-  .first-div,.second-div {
+  .first-div,.second-div,.third-div {
     display: flex;
     width: 100%;
     justify-content: space-around;
