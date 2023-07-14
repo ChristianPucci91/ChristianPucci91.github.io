@@ -1300,4 +1300,12 @@ opacity: 0.5;
   .jupiter-logo a{
     font-size: 20px;
   }
+  .caption{
+    position: absolute;
+    top: 60%;
+    left: -15px;
+  }
+  .skill-text{
+    font-size: 10px;
+  }
 }
