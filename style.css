@@ -649,7 +649,7 @@ svg {
 }
 
 .ufo-upper .cockpit .alien {
-  background-color: #6FDCAE;
+  background-color: #ffce00;
   width: 30px;
   height: 40px;
   position: absolute;
@@ -682,7 +682,7 @@ svg {
   top: 20%;
   left: 50%;
   border-radius: 50%;
-  box-shadow: inset 0px 0px 0px 0.5px #6FDCAE;
+  box-shadow: inset 0px 0px 0px 0.5px #ffce00;
   cursor: pointer;
   transform: translate(-50%, 0%);
 }
