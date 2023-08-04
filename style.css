@@ -574,7 +574,7 @@ svg {
   height: 50px;
   margin-top: -50px;
   position: absolute;
-  top: 50%;
+  top: 400px;
   left: 50%;
   transform: translate(-50%, -50%) scale(1, 1);
 }
@@ -881,7 +881,7 @@ svg {
     top:5000px;
   }
   .jupiter{
-    top: 7900px;
+    top: 7700px;
     opacity: 0.5;
   }
   .jupiter-text{
@@ -1234,14 +1234,13 @@ opacity: 0.5;
 }
 
 .jupiter-logo img{
-  width: 40px;
+  width: 60px;
   margin-right: 20px;
 }
 
 .jupiter-logo a {
   text-decoration: none;
   color: white;
-  font-family: "SpeedyRegular-7BLoE", sans-serif;
 }
 
 .jupiter-logo div{
@@ -1300,6 +1299,10 @@ opacity: 0.5;
 
   .jupiter-logo a{
     font-size: 20px;
+  }
+
+  .jupiter-text h3 {
+    text-align: center;
   }
   .caption{
     position: absolute;
