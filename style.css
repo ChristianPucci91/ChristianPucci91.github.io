@@ -717,7 +717,7 @@ svg {
 
 .ufo-upper .cockpit .alien .eye:hover:before {
   transform: translate(-50%, 0%) scale(1.5, 1.5);
-  background-color: #6FDCAE;
+  background-color: #ffce00;
 }
 
 
