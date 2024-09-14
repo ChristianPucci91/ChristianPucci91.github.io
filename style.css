@@ -43,7 +43,7 @@ body {
   border-radius: 50%;
   box-shadow: -20px -20px 50px 2px #000 inset, 0 0 20px 2px #000;
   background: 
-    url(https://i.stack.imgur.com/3SLqF.jpg)
+    url('./images/earth.jpg')
     0/auto 100%;
   animation: spin 30s linear infinite;
   position: absolute;
